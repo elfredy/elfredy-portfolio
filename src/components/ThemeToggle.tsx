@@ -8,7 +8,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      className="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded"
+      className="px-4 py-2 cursor-pointer bg-gray-200 dark:bg-gray-700 rounded"
     >
       {theme === "light" ? "🌙 Dark" : "☀️ Light"}
     </button>

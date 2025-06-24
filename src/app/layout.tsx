@@ -1,6 +1,7 @@
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Inter } from "next/font/google";
+import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,9 +39,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="tr" className={inter.className}>
+    <html lang="en" className={inter.className}>
       <ThemeProvider>
-        <body>{children}</body>
+        <body>
+          <Navbar />
+          {children}
+        </body>
       </ThemeProvider>
     </html>
   );

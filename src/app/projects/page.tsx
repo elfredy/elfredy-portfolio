@@ -6,7 +6,7 @@ export default async function ProjectsPage() {
   const projects: Project[] = await getProjects();
 
   return (
-    <main className="p-8 max-w-7xl mx-auto">
+    <div className="p-8 max-w-7xl mx-auto pt-32">
       <h1 className="text-4xl font-extrabold mb-12 text-center">Projelerim</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
         {projects.map((project, index) => (
@@ -38,6 +38,6 @@ export default async function ProjectsPage() {
           </motion.div>
         ))}
       </div>
-    </main>
+    </div>
   );
 }
