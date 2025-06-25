@@ -5,7 +5,7 @@ import useAuth from "@/hooks/useAuth";
 import { motion } from "framer-motion";
 
 export default function Home() {
-  const { user, loading } = useAuth();
+  const { loading } = useAuth();
 
   if (loading) {
     return <p>Loading...</p>;
