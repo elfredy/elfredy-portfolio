@@ -11,3 +11,15 @@ html:not(.dark) {
 html.dark {
    @apply bg-gradient-to-br from-[#0f172a] to-[#041634];
 }
+
+/* globals.css */
+.scrollbar-none::-webkit-scrollbar {
+   display: none;
+}
+
+.scrollbar-none {
+   -ms-overflow-style: none;
+   /* IE and Edge */
+   scrollbar-width: none;
+   /* Firefox */
+}

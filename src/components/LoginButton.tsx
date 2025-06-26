@@ -20,7 +20,7 @@ const LoginButton = () => {
       onClick={handleLogin}
       className="px-4 py-2 cursor-pointer bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
     >
-      Google ile Giriş Yap
+      Google ile Giriş Et
     </button>
   );
 };

@@ -2,11 +2,13 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Elfredy | Fullstack Developer",
+  metadataBase: new URL("https://elfredy.com"),
   description:
     "Elfredy'nin kişisel portfolyo sitesi. React, Next.js, Firebase ve modern teknolojilerle geliştirilmiştir.",
   openGraph: {
@@ -39,13 +41,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.className}>
-      <ThemeProvider>
-        <body>
+    <html lang="en" className={inter.className} suppressHydrationWarning>
+      <body className={`antialiased flex min-h-screen flex-col`}>
+        <ThemeProvider>
           <Navbar />
           {children}
-        </body>
-      </ThemeProvider>
+          <Footer />
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
