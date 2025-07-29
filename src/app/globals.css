@@ -1,25 +1,27 @@
 @import "tailwindcss";
-
+@custom-variant dark (&:where(.dark, .dark *));
 body {
-   @apply min-h-screen transition-all;
+    @apply min-h-screen transition-all;
 }
 
 html:not(.dark) {
-   @apply bg-gradient-to-br from-[#a5d0fa] via-[#cde3fb] to-[#f7f8fa];
+    @apply bg-gradient-to-br from-[#a5d0fa] via-[#cde3fb] to-[#f7f8fa];
 }
 
 html.dark {
-   @apply bg-gradient-to-br from-[#0f172a] to-[#041634];
+    @apply bg-gradient-to-br from-[#0f172a] to-[#041634];
 }
 
+
 /* globals.css */
+
 .scrollbar-none::-webkit-scrollbar {
-   display: none;
+    display: none;
 }
 
 .scrollbar-none {
-   -ms-overflow-style: none;
-   /* IE and Edge */
-   scrollbar-width: none;
-   /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
