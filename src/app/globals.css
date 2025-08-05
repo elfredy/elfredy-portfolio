@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "tailwindcss/preflight";
 @custom-variant dark (&:where(.dark, .dark *));
 body {
     @apply min-h-screen transition-all;
