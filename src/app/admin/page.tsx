@@ -1,5 +1,7 @@
 "use client";
 
+import { db } from "@/firebase/firebase";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { useState } from "react";
 
 export default function AdminPage() {
@@ -16,12 +18,23 @@ export default function AdminPage() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // API ile post işlemini buraya yazabilirsin
-    alert("Proje başarıyla eklendi!");
-    setForm({ title: "", image: "", description: "", url: "" });
+    console.log("Form verisi:", form);
+
+    try {
+      await addDoc(collection(db, "projects"), {
+        ...form,
+        createdAt: serverTimestamp(),
+      });
+      alert("Proje başarıyla eklendi!");
+      setForm({ title: "", image: "", description: "", url: "" });
+    } catch (error) {
+      console.error("Proje eklenemedi ❌", error);
+      alert("Bir hata oluştu: " + (error as Error).message);
+    }
   };
+
 
   return (
     <main className="max-w-2xl w-full mx-auto pt-45 px-6">

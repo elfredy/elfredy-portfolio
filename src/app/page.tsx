@@ -2,32 +2,14 @@
 import { motion } from "framer-motion";
 import { TypeAnimation } from 'react-type-animation';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import AnimatedBackgroundDots from '@/components/AnimatedBackgroundDots';
+
 
 export default function EnhancedHero() {
   return (
     <section className="min-h-screen flex flex-col md:flex-row-reverse items-center justify-between gap-10 px-8 pt-20 max-w-7xl mx-auto relative overflow-hidden">
       {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-blue-500/20 rounded-full"
-            initial={{
-              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
-              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
-            }}
-            animate={{
-              y: [0, -30, 0],
-              opacity: [0.3, 1, 0.3],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
-      </div>
+      <AnimatedBackgroundDots />
 
       {/* Sağ Taraf (Yazılar) */}
       <div className="flex-1 text-center md:text-left z-10">
